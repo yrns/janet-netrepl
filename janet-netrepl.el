@@ -27,7 +27,7 @@
     (set-process-filter p #'janet-netrepl-filter)
     (set-process-sentinel p #'janet-netrepl-sentinel)
     ;; the server expects a client name, use process name
-    (janet-netrepl-send p nil (process-name janet-netrepl-stream))
+    (janet-netrepl-send p nil (process-name p))
     ;; ignore initial prompt
     (accept-process-output p)
     p))
